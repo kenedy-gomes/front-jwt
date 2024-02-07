@@ -1,0 +1,60 @@
+
+.container{
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    background-color: rgb(44, 43, 43);
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.nav ul{
+    display: flex;
+    list-style: none;
+    color: white;
+}
+
+
+.nav ul li{
+    color: black;
+}
+
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+ 
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0rem 2rem 0rem 0rem;
+}
+
+.login:hover{
+    background-color: rgb(122, 16, 16);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.logo{
+    margin: 0rem 0rem 0rem 4rem;
+}
+
+.select{
+    padding: 0px 10px 0px 10px;
+}
+
+.menu{
+    margin: 0rem 2rem 0rem 0rem;
+}
+ 
+ 
