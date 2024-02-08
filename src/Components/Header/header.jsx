@@ -29,7 +29,8 @@ const Header = () => {
   const {isLoggedIn, userProfile, handleLogout} = useContext(AuthContext);
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('');
-  const firstName = userProfile.name.split(' ')[0];
+  const firstName = userProfile && userProfile.name ? userProfile.name.split(' ')[0] : '';
+
  
 
   const handleCategoryChange = (event) => {
@@ -37,7 +38,6 @@ const Header = () => {
     setSelectedCategory(category);
     navigate(`/categoria/${category}`);
   };
- 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -83,6 +83,7 @@ const Header = () => {
                    <Select variant='flushed' placeholder='Categorias'
                    value={selectedCategory}
                    onChange={handleCategoryChange}
+                   style={{paddingLeft: "10px"}}
                    >
                      <option value='aventura'>Aventura</option>
                      <option value='comedia'>Comédia</option>
@@ -124,8 +125,8 @@ const Header = () => {
               </MenuButton>
               <MenuList>
                 <MenuGroup title='Profile'>
-                  <MenuItem>My Account</MenuItem>
-                  <MenuItem>Settings</MenuItem>
+                  <MenuItem onClick={() => navigate("/edit-profile")}>Meus dados</MenuItem>
+                  <MenuItem>Opções</MenuItem>
                 </MenuGroup>
                 <MenuDivider />
                 <MenuGroup title='Help'>
